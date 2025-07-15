@@ -55,6 +55,7 @@ class _StickerPageState extends State<StickerPage> {
           onStickerSelected: (sticker) async {
             widget.onStickerSelected?.call(sticker.imagePath);
             await stiProvider.saveToRecentAndReload(sticker);
+            Navigator.of(context).pop();
           },
         ),
       ],
